@@ -1,0 +1,231 @@
+\documentclass{article}
+
+% margins
+\usepackage[top=1.0in, bottom=1.0in,left=1.0in, right=1.0in]{geometry}
+
+% fonts
+\usepackage{times}
+\renewcommand{\ttdefault}{cmtt}
+
+% alignment
+\raggedright
+\usepackage{ragged2e}\justifying
+
+% list spacing
+\usepackage{enumitem}
+\setlist{nolistsep}
+
+% header fields
+\makeatletter
+	\newcommand{\name}[1]{\def \@name {#1}}
+	\newcommand{\streetaddress}[1]{\def \@streetaddress {#1}}
+	\newcommand{\citystatezip}[1]{\def \@citystatezip {#1}}
+	\newcommand{\phone}[1]{\def \@phone {#1}}
+	\newcommand{\email}[1]{\def \@email {#1}}
+	\newcommand{\website}[1]{\def \@website {#1}}
+	\name{}
+	\streetaddress{}
+	\citystatezip{}
+	\phone{}
+	\email{}
+	\website{}
+\makeatother
+% create header
+\makeatletter
+\def\@maketitle {
+	\begin{center}
+		{\large \bf \@name} \\
+%		\@website \\
+		\@streetaddress \hfill \@email \\
+		\@citystatezip \hfill \@phone \\
+		\vspace{0.5em}
+		\hrule height 1pt
+	\end{center}
+}
+\makeatother
+
+% sections
+\makeatletter
+\renewcommand{\section}[1]{
+	\vspace{0.75em} % TODO(Robert) fix spacing in document so this is not needed
+	\@startsection
+		{section}
+		{1}
+		{\z@}
+		{0em}
+		{1em \@minus 1em} % tricks LaTeX into linebreak with no space afterward
+		{\normalfont\large\sc\bfseries}
+		*
+		{#1}
+	\vspace{-0.75em} % moves line up % TODO(Robert) fix document spacing
+	\hrule
+	\vspace{0.25em} % TODO(Robert) fix document spacing
+	\par
+}
+
+% dated entry
+\makeatletter
+	\newcommand{\entry}[1]{\def \@entry {#1}}
+	\newcommand{\dates}[1]{\def \@dates {#1}}
+	\entry{}
+	\dates{}
+	% dated entry format
+	\newenvironment{datedentry}{
+		\vspace{0.5em} % TODO(Robert) fix document spacing
+		{\bf \@entry} \hfill {\it \@dates} \\
+	}{}
+\makeatother
+
+% location entry
+\makeatletter
+	\newcommand{\location}[1]{\def \@location {#1}}
+	\entry{}
+	\location{}
+	\dates{}
+	\newenvironment{locationentry}{
+		\vspace{0.5em} % TODO(Robert) fix document spacing
+		{\bf \@entry}, \@location \hfill {\it \@dates} \\
+	}{}
+\makeatother
+
+\begin{document}
+
+\name{Robert Kernan}
+\phone{(770) 355-4050}
+\streetaddress{16 Arbor Way Drive}
+\citystatezip{Decatur, GA 30030}
+\email{rkernan@gmail.com}
+\website{robertkernan.com}
+
+\maketitle
+
+\thispagestyle{empty}
+
+%
+% OBJECTIVE
+%
+% \section{Objective}
+
+%
+% EDUCATION
+%
+\section{Education}
+\entry{Georgia Institute of Technology}
+\location{Atlanta, GA}
+\dates{Aug. 2010 - Present}
+\begin{locationentry}
+Bachelor of Science in Computer Science \\
+Focus in Information Internetworks and Platforms \\
+Major GPA: 4.23 \\
+{\it Expected Graduation: Summer 2013}
+\par
+\end{locationentry}
+
+\entry{Southern Polytechnic State University}
+\location{Marietta, GA}
+\dates{Aug. 2008 - July 2010}
+\begin{locationentry}
+Bachelor of Science in Computer Science
+\par
+\end{locationentry}
+
+%
+% QUALIFICATIONS
+%
+\section{Qualifications}
+% \vspace{0.25em} % TODO(Robert) fix document spacing
+\vspace{0.5em}
+{\bf Languages:}
+C, C++, Java, Python, Lua, Ruby, Ruby on Rails, Groovy, Visual Basic, MATLAB, MySQL
+
+\vspace{0.25em}
+{\bf Systems:}
+Windows 95/NT/XP/Vista/7/8, GNU/Linux
+
+\vspace{0.25em}
+{\bf Software:}
+Ant, Clang (LLVM), Eclipse, GNU Compiler Collection, Make, NetBreans, Visual Studio (2010, 2012)
+
+%
+% ACTIVITIES/CLUBS
+%
+\section{Activities/Clubs}
+\entry{Georgia Institute of Technology Mobile Application Development (GITMAD)}
+\dates{Sept. 2010 - Jan. 2011}
+\begin{datedentry}
+\end{datedentry}
+
+\entry{Association for Computing Machinery (ACM)}
+\dates{Mar. 2008 - Present}
+\begin{datedentry}
+\end{datedentry}
+
+%
+% EXPERIENCE
+%
+\section{Experience}
+\entry{Southern Polytechnic State University}
+\location{Marietta, GA}
+\dates{May 2010 - July 2010}
+\begin{locationentry}
+ Lab/Teaching Assistant for CSE 1302: Introduction to Data Structures
+\end{locationentry}
+
+%
+% PROFESSIONAL ACCOMPLISHMENTS
+%
+\section{Professional Accomplishments}
+
+\entry{Massive Open Online Course (MOOC) Teaching Assistant Manager}
+\dates{Jan. 2013 - April 2013}
+\begin{datedentry}
+Built a web application for testing and managing teaching assistants for MOOCs
+using Ruby on Rails.
+
+Build a web application using Ruby on Rails for testing, hiring, and managing
+teaching assistants for MOOCs.
+\end{datedentry}
+
+\entry{International Community School Joomla Intranet}
+\dates{Mar. 2012 - May 2012}
+\begin{datedentry}
+Collaborated to implement an intranet using Joomla that enabled teachers to
+easily communicate with students.
+\end{datedentry}
+
+%
+% EDUCATIONAL ACCOMPLISHMENTS
+%
+\section{Educational Accomplishments}
+
+\entry{My Pictures File System}
+\dates{Apr. 2012}
+\begin{datedentry}
+Implemented picture sorting and viewing filesystem using FUSE (Filesystem in
+USErspace) in C. Sorted pictures using exif date. Files sorted dynamically.
+\end{datedentry}
+
+\entry{Black/Gold Locks}
+\dates{Mar. 2012}
+\begin{datedentry}
+Designed and wrote priority-based thread locking system in the kernel (Linux
+2.6.25) and created system calls for scheduling requests. Suported any
+multi-threading library that created system threads.-
+\end{datedentry}
+
+\entry{Parser Generator and Regular Expression Language Interpreter}
+\dates{Nov. 2011 - Dec. 2011}
+\begin{datedentry}
+Created scanner, parser, and interpreter in Java for a regular expression
+language that could find, remove, and replace matched text in a file.
+\end{datedentry}
+
+\entry{Course Manager}
+\dates{May 2011 - July 2011}
+\begin{datedentry}
+Collaborated with a group to create a web application using Grails that handled
+administrator, teacher, and student creation and course association. Managed all
+authentication and security systems in the system.
+\end{datedentry}
+
+\end{document}
