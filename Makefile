@@ -1,15 +1,14 @@
-PROJECT=resume
-
 TEX_FILES=$(shell find . -name '*.tex')
 
 .PHONY: all
 all: build
 
-.PHONY: build
-build: $(PROJECT).pdf
+.PHONY: display
+display:
+	evince *.pdf &
 
-.PHONY: $(PROJECT).pdf
-$(PROJECT).pdf:
+.PHONY: build
+build: $(TEX_FILES)
 	pdflatex $(TEX_FILES)
 
 .PHONY: clean
