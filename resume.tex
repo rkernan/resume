@@ -30,18 +30,18 @@
 
 % header fields
 \makeatletter
-	\newcommand{\name}[1]{\def \@name {#1}}
-	\newcommand{\streetaddress}[1]{\def \@streetaddress {#1}}
-	\newcommand{\citystatezip}[1]{\def \@citystatezip {#1}}
-	\newcommand{\phone}[1]{\def \@phone {#1}}
-	\newcommand{\email}[1]{\def \@email {#1}}
-	\newcommand{\website}[1]{\def \@website {#1}}
-	\name{}
-	\streetaddress{}
-	\citystatezip{}
-	\phone{}
-	\email{}
-	\website{}
+\newcommand{\name}[1]{\def \@name {#1}}
+\newcommand{\streetaddress}[1]{\def \@streetaddress {#1}}
+\newcommand{\citystatezip}[1]{\def \@citystatezip {#1}}
+\newcommand{\phone}[1]{\def \@phone {#1}}
+\newcommand{\email}[1]{\def \@email {#1}}
+\newcommand{\website}[1]{\def \@website {#1}}
+\name{}
+\streetaddress{}
+\citystatezip{}
+\phone{}
+\email{}
+\website{}
 \makeatother
 % create header
 \makeatletter
@@ -49,7 +49,6 @@
 	\begin{center}
 		{\LARGE \bf \@name} \hfill \@streetaddress, \@citystatezip \\
 		\@email \hfill \@phone \\
-		\vspace{0.5em}
 		\hrule height 1pt
 	\end{center}
 }
@@ -58,45 +57,44 @@
 % sections
 \makeatletter
 \renewcommand{\section}[1]{
-	\vspace{0.75em} % TODO(Robert) fix spacing in document so this is not needed
+	\vspace{0.75em}
 	\@startsection
-		{section}
-		{1}
-		{\z@}
-		{0em}
-		{1em \@minus 1em} % tricks LaTeX into linebreak with no space afterward
-		{\normalfont\large\sc\bfseries}
-		*
-		{#1}
-	\vspace{-0.75em} % moves line up % TODO(Robert) fix document spacing
+	{section}
+	{1}
+	{\z@}
+	{0em}
+	{1em \@minus 1em} % tricks LaTeX into linebreak with no space afterward
+	{\normalfont\large\sc\bfseries}
+	*
+	{#1}
+	\vspace{-0.75em} % moves line up
 	\hrule
-	\vspace{0.25em} % TODO(Robert) fix document spacing
 	\par
 }
 
 % dated entry
 \makeatletter
-	\newcommand{\entry}[1]{\def \@entry {#1}}
-	\newcommand{\dates}[1]{\def \@dates {#1}}
-	\entry{}
-	\dates{}
-	% dated entry format
-	\newenvironment{datedentry}{
-		\vspace{0.5em} % TODO(Robert) fix document spacing
-		{\bf \@entry} \hfill {\it \@dates} \\
-	}{}
+\newcommand{\entry}[1]{\def \@entry {#1}}
+\newcommand{\dates}[1]{\def \@dates {#1}}
+\entry{}
+\dates{}
+% dated entry format
+\newenvironment{datedentry}{
+	\vspace{0.5em}
+	{\bf \@entry} \hfill {\it \@dates} \\
+}{}
 \makeatother
 
 % location entry
 \makeatletter
-	\newcommand{\location}[1]{\def \@location {#1}}
-	\entry{}
-	\location{}
-	\dates{}
-	\newenvironment{locationentry}{
-		\vspace{0.5em} % TODO(Robert) fix document spacing
-		{\bf \@entry}, \@location \hfill {\it \@dates} \\
-	}{}
+\newcommand{\location}[1]{\def \@location {#1}}
+\entry{}
+\location{}
+\dates{}
+\newenvironment{locationentry}{
+	\vspace{0.5em}
+	{\bf \@entry}, \@location \hfill {\it \@dates} \\
+}{}
 \makeatother
 
 \begin{document}
@@ -112,52 +110,54 @@
 
 \thispagestyle{empty}
 
-%
-% OBJECTIVE
-%
 % \section{Objective}
 
 \section{Education}
 
-\entry{Southern Polytechnic State University}
-\location{Marietta, GA}
-\dates{Aug. 2008 - Aug. 2010}
-\begin{locationentry}
-Bachelor of Science in Computer Science \\
-\it{Transferred}
-\par
-\end{locationentry}
+% \entry{Southern Polytechnic State University}
+% \location{Marietta, GA}
+% \dates{Aug. 2008 - Aug. 2010}
+% \begin{locationentry}
+	% Bachelor of Science in Computer Science \\
+	% \it{Transferred}
+% \end{locationentry}
 
 \entry{Georgia Institute of Technology}
 \location{Atlanta, GA}
-\dates{Aug. 2010 - Aug. 2013}
+% \dates{Aug. 2010 - Aug. 2013}
+\dates{Aug. 2013}
 \begin{locationentry}
-Bachelor of Science in Computer Science \\
-Focus in Information Internetworks and Platforms \\
-Major GPA: 3.38 \\
-Overall GPA: 2.98
-\par
+	Bachelor of Science in Computer Science \\
+	Focus in Information Internetworks and Platforms \\
+	Major GPA: 3.38 \\
+	% Overall GPA: 2.98
 \end{locationentry}
 
 \section{Technical Skills}
 \vspace{0.5em}
-{\bf Languages:}
-C, C++, C\#, Java, Python, Ruby
+\begin{description}
+	\item[Languages] \hfill \\
+		C, C++, C\#, Java, PHP, Python, Ruby
+	\item[Systems] \hfill \\
+		Windows 95/NT/XP/Vista/7/8, GNU/Linux
+	\item[Software] \hfill \\
+		Ant, Clang (LLVM), CMake, Eclipse, GNU Compiler Collection, Make, Visual
+		Studio
+	\item[Revision Control] \hfill \\
+		Git, Mercurial, Subversion
+\end{description}
 
-\vspace{0.25em}
-{\bf Systems:}
-Windows 95/NT/XP/Vista/7/8, GNU/Linux, OSX
-
-\vspace{0.25em}
-{\bf Software:}
-Ant, Clang (LLVM), CMake, Eclipse, GNU Compiler Collection, Make, Visual Studio
-
-\section{Experience}
+\section{Work Experience}
 \entry{Southern Polytechnic State University}
 \location{Marietta, GA}
 \dates{May 2010 - July 2010}
 \begin{locationentry}
- Lab/Teaching Assistant for CSE 1302: Introduction to Data Structures
+	Lab/Teaching Assistant for CSE 1302: Introduction to Data Structures
+	\begin{itemize}
+		\item Assigned lab-work and taught supplemental material.
+		\item Maintained office hours in the lab for students.
+		\item Submitted software requests for lab equipment.
+	\end{itemize}
 \end{locationentry}
 
 \section{Projects}
@@ -165,44 +165,45 @@ Ant, Clang (LLVM), CMake, Eclipse, GNU Compiler Collection, Make, Visual Studio
 \entry{Geopost}
 \dates{June 2013 - Aug. 2013}
 \begin{datedentry}
-\url{https://github.com/spardue/geopost} \\
-Designed and developed a REST API for creating geo-tagged content using Python.
-Collaborated to build an HTML5 front-end that displayed geo-tagged content on a
-map using the Google Maps Javascript API.
+	\url{https://github.com/spardue/geopost} \\
+	Designed and developed a REST API for creating geo-tagged content using
+	Python.  Collaborated to build an HTML5 front-end that displayed geo-tagged
+	content on a map using the Google Maps Javascript API.
 \end{datedentry}
 
 \entry{Massive Open Online Course (MOOC) Teaching Assistant Manager}
 \dates{Jan. 2013 - April 2013}
 \begin{datedentry}
-\url{https://github.com/kernan/MOOC-TA-Management} \\
-Collaborated to design and build a web application for testing and managing
-teaching assistants for MOOCs using Ruby on Rails; utilized Twitter Bootstrap to
-create a reactive front-end. Included a REST API for all functionality.
+	\url{https://github.com/kernan/MOOC-TA-Management} \\
+	Collaborated to design and build a web application for testing and managing
+	teaching assistants for MOOCs using Ruby on Rails; utilized Twitter
+	Bootstrap to create a reactive front-end. Included a REST API for all
+	functionality.
 \end{datedentry}
 
 \entry{International Community School Joomla Intranet}
 \dates{Mar. 2012 - May 2012}
 \begin{datedentry}
-Collaborate to modify and complete and intranet using Joomla that enabled
-teachers to communicate with students about assignments and upcoming events.
+	Collaborate to modify and complete and intranet using Joomla that enabled
+	teachers to communicate with students about assignments and upcoming events.
 \end{datedentry}
 
 \entry{Parser Generator and Regular Expression Language Interpreter}
 \dates{Nov. 2011 - Dec. 2011}
 \begin{datedentry}
-Created scanner, parser, and interpreter in Java for a regular expression
-language that could find, remove, and replace text patterns in a file. The
-scanner and parser tables were not language specific and could be generated by
-feeding the program a context-free grammar.
+	Created scanner, parser, and interpreter in Java for a regular expression
+	language that could find, remove, and replace text patterns in a file. The
+	scanner and parser tables were not language specific and could be generated
+	by feeding the program a context-free grammar.
 \end{datedentry}
 
 \entry{Course Manager}
 \dates{May 2011 - July 2011}
 \begin{datedentry}
-Collaborated to create a web application using Grails that handled
-administrator, teacher, and student creating and course association. Personally
-designed and implemented all authentication and authorization systems in the
-application.
+	Collaborated to create a web application using Grails that handled
+	administrator, teacher, and student creation and associating courses with
+	those users. Personally designed and implemented all authentication and
+	authorization systems in the application.
 \end{datedentry}
 
 \end{document}
