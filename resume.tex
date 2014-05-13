@@ -1,17 +1,16 @@
 \documentclass{article}
 
 % colors
-% \usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 
 % hyperlinks
-% \definecolor{med-blue}{rgb}{0,0,0.3}
-\usepackage[hidelinks]{hyperref}
-% \hypersetup{
-% 	colorlinks,
-% 	linkcolor={med-blue},
-% 	citecolor={med-blue},
-% 	urlcolor={med-blue}
-% }
+\usepackage{hyperref}
+\urlstyle{same}
+\hypersetup{
+	colorlinks = true,
+	urlcolor = violet,
+	ocgcolorlinks = true,
+}
 
 % margins
 \usepackage[top=1.0in, bottom=1.0in,left=1.0in, right=1.0in]{geometry}
@@ -47,8 +46,9 @@
 \makeatletter
 \def\@maketitle {
 	\begin{center}
-		{\LARGE \bf \@name} \hfill \@streetaddress, \@citystatezip \\
-		\@email \hfill \@phone \\
+		{\LARGE \bf \@name} \hfill \@streetaddress\\
+		\href{mailto:\@email}{\nolinkurl{\@email}} \hfill \@citystatezip \\
+		\url{\@website} \hfill \@phone \\
 		\hrule height 1pt
 	\end{center}
 }
@@ -104,7 +104,7 @@
 \streetaddress{16 Arbor Way Drive}
 \citystatezip{Decatur, GA 30030}
 \email{rkernan@gmail.com}
-\website{robertkernan.com}
+\website{https://github.com/kernan}
 
 \maketitle
 
@@ -114,22 +114,13 @@
 
 \section{Education}
 
-% \entry{Southern Polytechnic State University}
-% \location{Marietta, GA}
-% \dates{Aug. 2008 - Aug. 2010}
-% \begin{locationentry}
-	% Bachelor of Science in Computer Science \\
-	% \it{Transferred}
-% \end{locationentry}
-
 \entry{Georgia Institute of Technology}
 \location{Atlanta, GA}
-% \dates{Aug. 2010 - Aug. 2013}
 \dates{Aug. 2013}
 \begin{locationentry}
 	Bachelor of Science in Computer Science \\
 	Focus in Information Internetworks and Platforms \\
-	Major GPA: 3.38 \\
+	% Major GPA: 3.38 \\
 	% Overall GPA: 2.98
 \end{locationentry}
 
