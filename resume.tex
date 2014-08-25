@@ -1,29 +1,18 @@
 \documentclass{article}
-
-% colors
-\usepackage[dvipsnames]{xcolor}
-
-% links
-\usepackage[ocgcolorlinks, urlcolor=violet!85!black]{hyperref}
-\urlstyle{same}
-
-% margins
 \usepackage[top=1.0in, bottom=1.0in,left=1.0in, right=1.0in]{geometry}
-
-% fonts
 \usepackage{times}
 \renewcommand{\ttdefault}{cmtt}
+
+% sections
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{0pt}{0.5em}
+\titleformat{\section}{\normalfont\large\sc\bfseries}{}{0em}{}[{\titlerule[0.5pt]}]
 
 % lists
 \usepackage{paralist}
 \usepackage{enumitem}
 \setlist[description]{itemsep=0.2em,style=nextline,labelsep=\parindent,leftmargin=*}
 \setlist[itemize]{noitemsep,topsep=0pt}
-
-% section
-\usepackage{titlesec}
-\titlespacing*{\section}{0pt}{0pt}{0.5em}
-\titleformat{\section}{\normalfont\large\sc\bfseries}{}{0em}{}[{\titlerule[0.5pt]}]
 
 % title
 \makeatletter
@@ -69,6 +58,11 @@
 \dates{}
 \newenvironment{locationentry}{\noindent{\bf \@entry}, \@location\hfill{\it\@dates\linebreak\/}}{\vspace{0.5em}}
 \makeatother
+
+% links
+\usepackage[dvipsnames]{xcolor}
+\usepackage[ocgcolorlinks,urlcolor=violet!85!black]{hyperref}
+\urlstyle{same}
 
 \begin{document}
 
