@@ -44,6 +44,7 @@
 		{\LARGE \bf \@name} \hfill \@streetaddress\\
 		\href{mailto:\@email}{\nolinkurl{\@email}} \hfill \@citystatezip \\
 		\url{\@website} \hfill \@phone \\
+		\vspace{0.25em}
 		\hrule height 1pt
 	\end{center}
 }
@@ -62,7 +63,7 @@
 	{\normalfont\large\sc\bfseries}
 	*
 	{#1}
-	\vspace{-0.75em} % moves line up
+	\vspace{-0.5em}
 	\hrule
 	\par
 }
@@ -148,6 +149,25 @@
 
 \section{Projects}
 
+\entry{Vector Math Library}
+\dates{April 2014 - Present}
+\begin{datedentry}
+	\url{https://github.com/kernan/math} \\
+	Built and currently maintaining a C++11 header-only library containing
+	generic size and type vector and matrix implementations with
+	specializations for 2, 3, and 4-dimensions. Includes a unit test suite
+	built using Boost.
+\end{datedentry}
+
+\entry{Graphics Engine}
+\dates{July 2013 - Present}
+\begin{datedentry}
+	Building a simple, cross-platform (Windows and Linux currently) graphics
+	engine using OpenGL as the rendering backend. Current goals are
+	implementing a more advanced input handling system and adding lighting
+	primitives to the scene.
+\end{datedentry}
+
 \entry{Geopost}
 \dates{June 2013 - Aug. 2013}
 \begin{datedentry}
@@ -181,15 +201,6 @@
 	language that could find, remove, and replace text patterns in a file. The
 	scanner and parser tables were not language specific and could be generated
 	by feeding the program a context-free grammar.
-\end{datedentry}
-
-\entry{Course Manager}
-\dates{May 2011 - July 2011}
-\begin{datedentry}
-	Collaborated to create a web application using Grails that handled
-	administrator, teacher, and student creation and associating courses with
-	those users. Personally designed and implemented all authentication and
-	authorization systems in the application.
 \end{datedentry}
 
 \end{document}
