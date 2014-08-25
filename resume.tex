@@ -14,9 +14,11 @@
 \usepackage{times}
 \renewcommand{\ttdefault}{cmtt}
 
-% list spacing
+% lists
+\usepackage{paralist}
 \usepackage{enumitem}
-\setlist{nolistsep}
+\setlist[description]{itemsep=0.2em,style=nextline,labelsep=\parindent,leftmargin=*}
+\setlist[itemize]{noitemsep,topsep=0pt}
 
 % section
 \usepackage{titlesec}
@@ -96,19 +98,42 @@
 \end{locationentry}
 
 \section{Technical Skills}
-% TODO(2014-08-24) Use a compact list instead of comma separated.
 \begin{description}
-	\item[Languages] \hfill \\
-		C, C++, C\#, Java, Lua, PHP, Python, Ruby
-	\item[Systems] \hfill \\
-		Windows 95/NT/XP/Vista/7/8, GNU/Linux
-	\item[Software] \hfill \\
-		Ant, Clang (LLVM), CMake, Eclipse, GNU Compiler Collection, Make, MySQL,
-		SQLite, Visual Studio
-	\item[Revision Control] \hfill \\
-		Git, Mercurial, Subversion
+	\item[Languages]
+		\begin{inparaitem}
+			\item C
+			\item C++
+			\item C\#
+			\item Java
+			\item Lua
+			\item PHP
+			\item Python
+			\item Ruby
+		\end{inparaitem}
+	\item[Operating Systems]
+		\begin{inparaitem}
+			\item Windows 95/NT/XP/Vista/7/8
+			\item GNU/Linux
+		\end{inparaitem}
+	\item[Software]
+		\begin{inparaitem}
+			\item Ant
+			\item Clang
+			\item CMake
+			\item Eclipse
+			\item GNU Compiler Collection
+			\item Make
+			\item MySQL
+			\item SQLite
+			\item Visual Studio
+		\end{inparaitem}
+	\item[Revision Control]
+		\begin{inparaitem}
+			\item Git
+			\item Mercurial
+			\item Subversion
+		\end{inparaitem}
 \end{description}
-\vspace{0.5em}
 
 \section{Work Experience}
 \entry{Southern Polytechnic State University}
