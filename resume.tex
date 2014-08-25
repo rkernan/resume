@@ -25,12 +25,12 @@
 
 % title
 \makeatletter
-\newcommand{\name}[1]{\def \@name {#1}}
-\newcommand{\streetaddress}[1]{\def \@streetaddress {#1}}
-\newcommand{\citystatezip}[1]{\def \@citystatezip {#1}}
-\newcommand{\phone}[1]{\def \@phone {#1}}
-\newcommand{\email}[1]{\def \@email {#1}}
-\newcommand{\website}[1]{\def \@website {#1}}
+\newcommand{\name}[1]{\def\@name{#1}}
+\newcommand{\streetaddress}[1]{\def\@streetaddress{#1}}
+\newcommand{\citystatezip}[1]{\def\@citystatezip{#1}}
+\newcommand{\phone}[1]{\def\@phone{#1}}
+\newcommand{\email}[1]{\def\@email{#1}}
+\newcommand{\website}[1]{\def\@website{#1}}
 \name{}
 \streetaddress{}
 \citystatezip{}
@@ -39,11 +39,11 @@
 \website{}
 \makeatother
 \makeatletter
-\def\@maketitle {
+\def\@maketitle{
 	\begin{center}
-		{\LARGE \bf \@name} \hfill \@streetaddress\\
-		\href{mailto:\@email}{\nolinkurl{\@email}} \hfill \@citystatezip \\
-		\url{\@website} \hfill \@phone \\
+		{\LARGE \bf\@name}\hfill\@streetaddress\\
+		\href{mailto:\@email}{\nolinkurl{\@email}}\hfill\@citystatezip\\
+		\url{\@website}\hfill\@phone\\
 		\vspace{0.25em}
 		\hrule height 1pt
 	\end{center}
@@ -52,26 +52,26 @@
 
 % dated entry
 \makeatletter
-\newcommand{\entry}[1]{\def \@entry {#1}}
-\newcommand{\dates}[1]{\def \@dates {#1}}
+\newcommand{\entry}[1]{\def\@entry{#1}}
+\newcommand{\dates}[1]{\def\@dates{#1}}
 \entry{}
 \dates{}
-\newenvironment{datedentry}{\noindent{\bf \@entry} \hfill {\it \@dates \linebreak}}{\vspace{0.5em}}
+\newenvironment{datedentry}{\noindent{\bf\@entry}\hfill{\it\@dates\linebreak\/}}{\vspace{0.5em}}
 \makeatother
 
 % location entry
 \makeatletter
-\newcommand{\location}[1]{\def \@location {#1}}
+\newcommand{\location}[1]{\def\@location{#1}}
 \entry{}
 \location{}
 \dates{}
-\newenvironment{locationentry}{\noindent{\bf \@entry}, \@location \hfill {\it \@dates \linebreak}}{\vspace{0.5em}}
+\newenvironment{locationentry}{\noindent{\bf \@entry}, \@location\hfill{\it\@dates\linebreak\/}}{\vspace{0.5em}}
 \makeatother
 
 \begin{document}
 
 \name{Robert Kernan}
-\phone{770-355-4050}
+\phone{770\texttt{-}355\texttt{-}4050}
 \streetaddress{16 Arbor Way Drive}
 \citystatezip{Decatur, GA 30030}
 \email{rkernan@gmail.com}
@@ -87,7 +87,7 @@
 
 \entry{Georgia Institute of Technology}
 \location{Atlanta, GA}
-\dates{Aug. 2013}
+\dates{August 2013}
 \begin{locationentry}
 	Bachelor of Science in Computer Science \\
 	Focus in Information Internetworks and Platforms % \\
@@ -113,7 +113,7 @@
 \section{Work Experience}
 \entry{Southern Polytechnic State University}
 \location{Marietta, GA}
-\dates{May 2010 - July 2010}
+\dates{May 2010 -- July 2010} % chktex 8
 \begin{locationentry}
 	Lab/Teaching Assistant for CSE 1302: Introduction to Data Structures
 	\begin{itemize}
@@ -126,7 +126,7 @@
 \section{Projects}
 
 \entry{Vector Math Library}
-\dates{April 2014 - Present}
+\dates{April 2014 -- Present} % chktex 8
 \begin{datedentry}
 	\url{https://github.com/kernan/math} \\
 	Built and currently maintaining a C++11 header-only library containing
@@ -136,7 +136,7 @@
 \end{datedentry}
 
 \entry{Graphics Engine}
-\dates{July 2013 - Present}
+\dates{July 2013 -- Present} % chktex 8
 \begin{datedentry}
 	Building a simple, cross-platform (Windows and Linux currently) graphics
 	engine using OpenGL as the rendering backend. Current goals are
@@ -145,16 +145,16 @@
 \end{datedentry}
 
 \entry{Geopost}
-\dates{June 2013 - Aug. 2013}
+\dates{June 2013 -- August 2013} % chktex 8
 \begin{datedentry}
 	\url{https://github.com/spardue/geopost} \\
 	Designed and developed a REST API for creating geo-tagged content using
 	Python.  Collaborated to build an HTML5 front-end that displayed geo-tagged
-	content on a map using the Google Maps Javascript API.
+	content on a map using the Google Maps Javascript API\@.
 \end{datedentry}
 
 \entry{Massive Open Online Course (MOOC) Teaching Assistant Manager}
-\dates{Jan. 2013 - April 2013}
+\dates{January 2013 -- April 2013} % chktex 8
 \begin{datedentry}
 	\url{https://github.com/kernan/MOOC-TA-Management} \\
 	Collaborated to design and build a web application for testing and managing
@@ -164,14 +164,14 @@
 \end{datedentry}
 
 \entry{International Community School Joomla Intranet}
-\dates{Mar. 2012 - May 2012}
+\dates{March 2012 -- May 2012} % chktex 8
 \begin{datedentry}
 	Collaborate to modify and complete and intranet using Joomla that enabled
 	teachers to communicate with students about assignments and upcoming events.
 \end{datedentry}
 
 \entry{Parser Generator and Regular Expression Language Interpreter}
-\dates{Nov. 2011 - Dec. 2011}
+\dates{November 2011 -- December 2011} % chktex 8
 \begin{datedentry}
 	Created scanner, parser, and interpreter in Java for a regular expression
 	language that could find, remove, and replace text patterns in a file. The
