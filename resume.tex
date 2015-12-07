@@ -5,7 +5,7 @@
 
 % sections
 \usepackage{titlesec}
-\titlespacing*{\section}{0pt}{0pt}{0.5em}
+\titlespacing*{\section}{0em}{0em}{0.8em}
 \titleformat{\section}{\normalfont\large\sc\bfseries}{}{0em}{}[{\titlerule[0.5pt]}]
 
 % lists
@@ -68,8 +68,8 @@
 
 \name{Robert Kernan}
 \phone{770\texttt{-}355\texttt{-}4050}
-\streetaddress{16 Arbor Way Drive}
-\citystatezip{Decatur, GA 30030}
+\streetaddress{7302 Santa Fe Pkwy}
+\citystatezip{Sandy Springs, GA 30350}
 \email{rkernan@gmail.com}
 \website{https://github.com/kernan}
 
@@ -77,7 +77,7 @@
 
 \thispagestyle{empty}
 
-% \section{Objective}
+\hspace{2em} % FIXME
 
 \section{Education}
 
@@ -86,12 +86,13 @@
 \dates{August 2013}
 \begin{locationentry}
 	Bachelor of Science in Computer Science \\
-	Focus in Information Internetworks and Platforms % \\
-	% Major GPA: 3.38 \\
-	% Overall GPA: 2.98
+	Focus in Information Internetworks and Platforms
 \end{locationentry}
 
+\hspace{2em} % FIXME
+
 \section{Technical Skills}
+
 \begin{description}
 	\item[Languages]
 		\begin{inparaitem}
@@ -99,14 +100,16 @@
 			\item C++
 			\item C\#
 			\item Java
+			\item Javascript
 			\item Lua
 			\item PHP
 			\item Python
 			\item Ruby
+			\item SQL
 		\end{inparaitem}
 	\item[Operating Systems]
 		\begin{inparaitem}
-			\item Windows 7
+			\item Windows
 			\item GNU/Linux
 		\end{inparaitem}
 	\item[Software]
@@ -119,6 +122,7 @@
 			\item Jenkins
 			\item Make
 			\item MySQL
+			\item Node.js
 			\item PostgreSQL
 			\item SQLite
 			\item Visual Studio
@@ -126,11 +130,12 @@
 	\item[Revision Control]
 		\begin{inparaitem}
 			\item Git
-			\item Mercurial
 			\item Subversion
-			\item TFS
+			\item Team Foundation Server
 		\end{inparaitem}
 \end{description}
+
+\hspace{2em} % FIXME
 
 \section{Work Experience}
 
@@ -140,11 +145,20 @@
 \begin{locationentry}
 	Quality Assurance Engineer
 	\begin{itemize}
-		\item Tested frontend/backend products.
-		\item Maintained automated test framework.
-		\item Setup and maintained Jenkins build server.
+		\item Testing, documenting, and releasing front-end and back-end
+			products in QA.
+		\item Set up automated test routine system using Jenkins, Amazon Web
+			Services, and Docker.
+		\item Maintaining and extending automated test framework.
+		\item Developing back-end REST API using Node.js with Promises and
+			Generators for asynchronous control flow.
+		\item Developing API Gateway using Python with Twisted that allows the
+			main API to pass queries to the system responsible for generating
+			text-to-speech messages.
 	\end{itemize}
 \end{locationentry}
+
+\hspace{1em} % FIXME
 
 \entry{Southern Polytechnic State University}
 \location{Marietta, GA}
@@ -157,43 +171,5 @@
 		\item Submitted software requests for lab equipment.
 	\end{itemize}
 \end{locationentry}
-
-\section{Projects}
-
-\entry{Vector Math Library}
-\dates{April 2014 -- Present} % chktex 8
-\begin{datedentry}
-	\url{https://github.com/kernan/math} \\
-	Built and currently maintaining a C++11 header-only library containing
-	generic size and type vector and matrix implementations with
-	specializations for 2, 3, and 4-dimensions. Includes a unit test suite
-	built using Boost.
-\end{datedentry}
-
-\entry{Geopost}
-\dates{June 2013 -- August 2013} % chktex 8
-\begin{datedentry}
-	\url{https://github.com/spardue/geopost} \\
-	Designed and developed a REST API for creating geo-tagged content using
-	Python.  Collaborated to build an HTML5 front-end that displayed geo-tagged
-	content on a map using the Google Maps Javascript API\@.
-\end{datedentry}
-
-\entry{Massive Open Online Course (MOOC) Teaching Assistant Manager}
-\dates{January 2013 -- April 2013} % chktex 8
-\begin{datedentry}
-	\url{https://github.com/kernan/MOOC-TA-Management} \\
-	Collaborated to design and build a web application for testing and managing
-	teaching assistants for MOOCs using Ruby on Rails; utilized Twitter
-	Bootstrap to create a reactive front-end. Included a REST API for all
-	functionality.
-\end{datedentry}
-
-\entry{International Community School Joomla Intranet}
-\dates{March 2012 -- May 2012} % chktex 8
-\begin{datedentry}
-	Collaborate to modify and complete and intranet using Joomla that enabled
-	teachers to communicate with students about assignments and upcoming events.
-\end{datedentry}
 
 \end{document}
