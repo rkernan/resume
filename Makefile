@@ -1,6 +1,6 @@
 .PHONY: all clean
 
-all: resume.tex
+all:
 	latexmk -dvi- -pdf
 
 clean:
