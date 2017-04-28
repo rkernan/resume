@@ -5,7 +5,7 @@
 
 % sections
 \usepackage{titlesec}
-\titlespacing*{\section}{0em}{0em}{0.8em}
+\titlespacing*{\section}{0em}{1em}{0.8em}
 \titleformat{\section}{\normalfont\large\sc\bfseries}{}{0em}{}[{\titlerule[0.5pt]}]
 
 % lists
@@ -47,7 +47,9 @@
 \newcommand{\dates}[1]{\def\@dates{#1}}
 \entry{}
 \dates{}
-\newenvironment{datedentry}{\noindent{\bf\@entry}\hfill{\it\@dates\linebreak\/}}{\vspace{0.5em}}
+\newenvironment{datedentry}
+	{\noindent{\bf\@entry}\hfill{\it\@dates\linebreak\/}}
+	{\vspace{0.5em}\hspace{1em}}
 \makeatother
 
 % location entry
@@ -56,7 +58,9 @@
 \entry{}
 \location{}
 \dates{}
-\newenvironment{locationentry}{\noindent{\bf \@entry}, \@location\hfill{\it\@dates\linebreak\/}}{\vspace{0.5em}}
+\newenvironment{locationentry}
+	{\noindent{\bf \@entry}, \@location\hfill{\it\@dates\linebreak\/}}
+	{\vspace{0.5em}\hspace{1em}}
 \makeatother
 
 % links
@@ -77,8 +81,6 @@
 
 \thispagestyle{empty}
 
-\hspace{2em} % FIXME
-
 \section{Education}
 
 \entry{Georgia Institute of Technology}
@@ -88,8 +90,6 @@
 	Bachelor of Science in Computer Science \\
 	Focus in Information Internetworks and Platforms
 \end{locationentry}
-
-\hspace{2em} % FIXME
 
 \section{Technical Skills}
 
@@ -135,18 +135,14 @@
 		\end{inparaitem}
 \end{description}
 
-\hspace{2em} % FIXME
-
 \section{Work Experience}
 
 \entry{Noble Systems Corporation}
 \location{Atlanta, GA}
-\dates{February 2016 -- Present} % chktex 8
+\dates{February 2016 -- Present}
 \begin{locationentry}
 	Software Engineer
 \end{locationentry}
-
-\hspace{1em} % FIXME
 
 \entry{Noble Systems Corporation}
 \location{Atlanta, GA}
@@ -164,8 +160,6 @@
 			responsible for generating text-to-speech messages.
 	\end{itemize}
 \end{locationentry}
-
-\hspace{1em} % FIXME
 
 \entry{Southern Polytechnic State University}
 \location{Marietta, GA}
