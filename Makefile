@@ -8,7 +8,7 @@ all: $(TARGETS)
 $(PROJECT).pdf: $(PROJECT).tex
 	latexmk -dvi- -pdf -pdflatex="pdflatex -interactive=nonstopmode" $<
 
-cleanall:
+clean-dist:
 	latexmk -C
 
 clean:
