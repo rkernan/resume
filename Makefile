@@ -1,7 +1,7 @@
 PROJECT=resume
 TARGETS=$(PROJECT).pdf
 
-.PHONY: all clean cleanall
+.PHONY: all clean clean-dist
 
 all: $(TARGETS)
 
